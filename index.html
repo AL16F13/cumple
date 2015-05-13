@@ -24,136 +24,108 @@
  </head>
 
  <body>
-        <div data-role="page" id="page">
+  <div data-role="page" id="principal">
 	<div data-role="header">
-		
-        <h1 align="center">AVERIGUA CUANTOS DIAS FALTAN PARA TU CUMPLEAÑOS</h1>
+        <h1>CUANTO DIAS FALTAN PARA SU CUMPLE</h1>
 	</div>
 	<div data-role="content">	
-    
-    <h2 align="center">BIENVENIDO</h2>
-		<p>Esta aplicacion te servira para calcular cuantos dias faltan para tu cumpleaños</p>
+        <h2 align="center">BIENVENIDO</h2>
+		<p>ESTA APLICACION LE SERVIRA PARA PODER CALCULAR CUANTOS DIAS RESTAN PARA SU PROXIMO CUMPLEAÑOS</p>
+        <br>
+        <br>
         <div align="center">
-        <a  href="#datos" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ">
-        
-        COMENZAR
-        </a>	
+        <a  href="#datos" id="btncomenzar" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ">COMENZAR</a>	
         </div>	
- </div>
+    </div>
  
 	<div data-role="footer" data-position="fixed">
-
-		<h4>@EvaGuerrero_LucyNT</h4>
+		<h1>@EvaGuerrero_LucyNT</h1>
 	</div>
 </div>
 
 <div data-role="page" id="datos">
 	<div data-role="header">
-		
-        <h1>¿CUAL ES TU NOMBRE?</h1>
+        <h1>CUANTO DIAS FALTAN PARA SU CUMPLE</h1>
 	</div>
+    
 	<div data-role="content" >
-    NOMBRE	
- <input type="text" name="nombre" placeholder="NOMBRE" style="we:100" id="txtnombre" >
-	 <div data-role="controlgroup" data-type="horizontal" align="center">
-
-        <a  href="#page" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ">   
-        ATRAS
-        </a>	
-        <a  href="#fechas" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline " id="siguiente_nombre">
-        
-        SIGUIENTE
-        </a>	
-        </div>		
-	 </div>
+      <div data-role="controlgroup" data-type="horizontal" align="center">
+        <p>¿CUAL ES TU NOMBRE?</p>
+        <br>	
+        <input type="text" placeholder="NOMBRE" id="txtnombre" >
+      </div>  
+	  <div data-role="controlgroup" data-type="horizontal" align="center">
+         <a  href="#principal" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline "> ATRAS</a>	
+        <a  href="#fechas"  id="btnfecha" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ">SIGUIENTE</a>	
+      </div>		
+    </div>
+    
 	<div data-role="footer" data-position="fixed">
-
-		<h4>@EvaGuerrero_LucyNT</h4>
+		<h1>@EvaGuerrero_LucyNT</h1>
 	</div>
 </div>
 
 <div data-role="page" id="fechas">
 	<div data-role="header">
-		
-        <h1>¿CUAL ES TU FECHA DE NACIMIENTO?</h1>
+        <h1>CUANTO DIAS FALTAN PARA SU CUMPLE</h1>
 	</div>
-	<div align="center" data-role="controlgroup" data-type="horizontal">	
-    
-    <div align="center" style="width:100px; float:left; padding:15px">
-    DD
-    <input type="number" name="numero" placeholder="DIA" id="diacumple">
-    
+	
+    <div align="center" data-role="controlgroup" data-type="horizontal">
+      <p>¿QUE DIA NACISTE?</p>
+      <br>	
+      DIA
+      <input type="number" name="numero" placeholder="DD" id="txtdia">
+      MES
+      <input type="number" name="numero" placeholder="MM" id="txtmes"> 
+      AÑO
+      <input type="number" name="numero" placeholder="AAAA" id="txtyear">
     </div>
-     <div align="center" style="width:100px; float:left; padding:15px">
-     MM
-    <input type="number" name="numero" placeholder="MES" id="mescumple">
-    
+    <br>
+   <div data-role="controlgroup" data-type="horizontal" align="center" style="clear:both">
+        <a  href="#datos" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline "> ATRAS</a>	
+        <a  href="#resultado"  id="btnresultado" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ">SIGUIENTE</a>	
     </div>
-     <div align="center" style="width:80px; float:left; padding:15px">
-     AAAA
-    <input type="number" name="numero" placeholder="AÑO" id="aniocumple">
     
-    </div>
-		 <div data-role="controlgroup" data-type="horizontal" align="center" style="clear:both">
-        <a  href="#datos" data-transition="pop" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ">   
-        ATRAS
-        </a>	
-        <a  href="#resultado" data-transition="pop" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline " id="siguiente_fecha">
-         
-        SIGUIENTE
-        </a>	
-        </div>			
-	</div>
 	<div data-role="footer" data-position="fixed">
-
-		<h4>@EvaGuerrero_LucyNT</h4>
+		<h1>@EvaGuerrero_LucyNT</h1>
 	</div>
 </div>
 
 <div data-role="page" id="resultado" >
 	<div data-role="header">
-		
-        <h1>!CUANTOS DIAS FALTAN PARA CELEBRAR¡</h1>
+        <h1>CUANTO DIAS FALTAN PARA SU CUMPLE</h1>
 	</div>
 	<div data-role="content">
- <div id="Mnombre" align="center" class="final">
+      <div id="divnombre" align="center" class="final">
+      </div>
+      
+      <div id="divdias" align="center" class="final">
+      </div>
  
+      <div id="divcumple" align="center" class="final"> 
+      </div>
+      
+      <div id="divfelicidades" align="center" hidden="true" class="final">
+        ¡FELICIDADES YA SE APROXIMA TU CUMPLEAÑOS, NUESTROS MEJORES DESEOS PARA USTED!
+        <br>
+        <br>
+        <img src="cumple.jpg" width="150" height="150">
  
- </div>
-  <div id="Mdias" align="center" class="final">
- 
- 
- </div>
-  <div id="Mcumple" align="center" class="final">
- 
- 
- </div>
-  <div id="Mfelicidades" align="center" hidden="true" class="final">
-FELICIDADES YA FALTA POCO TIEMPO PARA QUE SEA LA FIESTA!!!! CUMPLEAÑER@!!!
-<br>
-<br>
- <img src="cumple.jpg" width="250" height="250">
-
- </div>
-  <div id="edad" align="center" class="final">
- 
- 
- </div>
- <div align="center">
-   <a  href="#page" data-transition="pop" class="ui-btn ui-icon-home ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline " >
-         
-        INICIO
-        </a>
- </div>       
+      </div>
+      <div id="divedad" align="center" class="final">
+      </div>
+      
+      <div align="center">
+       <a  href="#principal" id="btninicio" data-transition="pop" class="ui-btn ui-icon-home ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline " >INICIO</a>
+      </div>       
     </div>
  
  
 	<div data-role="footer" data-position="fixed">
-
-		<h4>@EvaGuerrero_LucyNT</h4>
+		<h1>@EvaGuerrero_LucyNT</h1>
 	</div>
 </div>
 
-    </body>
+</body>
 
 </html>

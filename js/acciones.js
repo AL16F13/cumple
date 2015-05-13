@@ -1,73 +1,82 @@
-//JavaScript Document
+// JavaScript Document
 $(document).ready(function(e) {
-document.addEventListener("deviceready",function(){
-	$ ('#siguiente_fecha') .on ('top' , function () { 
+//document.addEventListener("deviceready",function(){
+	$ ('#btncomenzar') .on ('tap' , function () { 
+  navigator .vibrate (1000);
+ });//  tap a btnvibrar
+   $ ('#btninicio') .on ('tap' , function () { 
   navigator .vibrate (1000);
  });//  tap a btnvibrar
 	
 }); 
-});
+//});
 
 $(document).ready(function(e) {
 	var nombre;
-	$('#siguiente_nombre').click(function(e){
+	$('#btnfecha').click(function(e){
 		nombre=$('#txtnombre').val();
 		
 		
 	});//click siguiente nombre
 	
-	$('#siguiente_fecha').click(function(e){
+	$('#btnresultado').click(function(e){
 		var fecha= new Date();
 		
 
-		fechaAct = new Date(fecha.getFullYear() + '/' +(fecha.getMonth()+1) +'/'+ fecha.getDate());
+		fechaA = new Date(fecha.getFullYear() + '/' +(fecha.getMonth()+1) +'/'+ fecha.getDate());
 
-		var diacum=$('#diacumple').val();
-		var mescum=$('#mescumple').val();
-		var aniocum=$('#aniocumple').val();
+		var diaC=$('#txtdia').val();
+		var mesC=$('#txtmes').val();
+		var yearC=$('#txtyear').val();
 
-		fechaCum=new Date(fecha.getFullYear() +'/'+ mescum +'/'+ diacum);
-		fechaCuAc = fechaCum;
+		fechaC=new Date(fecha.getFullYear() +'/'+ mesC +'/'+ diaC);
+		fechaCA = fechaC;
 		
 
 	
-	if(fechaCum > fechaAct)
+	if(fechaC > fechaA)
 	{
-       cuando=fechaCum-fechaAct;
+       cuando=fechaC-fechaA;
 	   faltan=((((cuando/1000)/60)/60)/24);
 	  
 	}
 	else
 	{
-	fechaCum=new Date((fecha.getFullYear()+1) +'/'+ mescum +'/'+ diacum);
-	  cuando=fechaCum-fechaAct;
+	fechaC=new Date((fecha.getFullYear()+1) +'/'+ mesC +'/'+ diaC);
+	  cuando=fechaC-fechaA;
 	   faltan=((((cuando/1000)/60)/60)/24);
 	   
 	}
-	$('#Mnombre').text(nombre +' FALTAN');
-		$('#Mdias').text(faltan);
+	$('#divnombre').text(nombre +' FALTAN');
+		$('#divdias').text(faltan);
 		if (faltan==1)
 		{
-		$('#Mcumple').text('DIA PARA TU CUMPLE');
+		$('#divcumple').text('DIA PARA SU CUMPLEAÑOS');
 		}
 		else
 		{
-			$('#Mcumple').text('DIAS PARA TU CUMPLE');
+			$('#divcumple').text('DIAS PARA SU CUMPLEAÑOS');
 		}
-		if (faltan <7)
+		if (faltan <=7)
 		{
-				
-	$('#Mfelicidades').show();}
+	     $('#divfelicidades').show();}
+	    else 
+	    {
+		  $('#divfelicidades').hide();}
+		  
+	  
+	  {}
+	 
 
-		edad=fecha.getFullYear()-aniocum;
-		if (fechaCuAc > fechaA)
+		edad=fecha.getFullYear()-yearC;
+		if (fechaCA > fechaA)
 		{
 			edad=edad-1;
-			$('#Medad').text('TIENES '+ edad  + ' AÑOS HOY');
+			$('#divedad').text('TIENES '+ edad  + ' AÑOS');
 		}
 		else
 		{
-		$('#Medad').text('TIENES '+ edad  +  'AÑOS HOY');
+		$('#divedad').text('TIENES '+ edad  +  ' AÑOS HOY');
 		}
 			function redondeo(numero, decimales)
 {
@@ -75,7 +84,18 @@ var flotante = parseFloat(numero);
 var resultado = Math.round(flotante*Math.pow(10,decimales))/Math.pow(10,decimales);
 return resultado;
 }
-});// click fecha siguiente
+      
+	 
+	 $('#btninicio').click(function(e){
+		$('#txtnombre').val('')
+		$('#txtdia').val('')
+		$('#txtmes').val('')
+		$('#txtyear').val('')
+		
+		
+	});
+
+});// click sig fecha
 
 	});//ready
 
