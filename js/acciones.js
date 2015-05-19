@@ -12,78 +12,56 @@ $(document).ready(function(e) {
 //});
 
 $(document).ready(function(e) {
-	var nombre;
-	$('#btnfecha').click(function(e){
-		nombre=$('#txtnombre').val();
-		
-		
-	});//click siguiente nombre
+	
 	
 	$('#btnresultado').click(function(e){
-		var fecha= new Date();
+		var diac;
+		diac=$('#txtdia').val();
+		var mesc;
+		mesc=$('#txtmes').val();
+		var anioc;
+		anioc=$('#txtyear').val();
 		
-
-		fechaA = new Date(fecha.getFullYear() + '/' +(fecha.getMonth()+1) +'/'+ fecha.getDate());
-
-		var diaC=$('#txtdia').val();
-		var mesC=$('#txtmes').val();
-		var yearC=$('#txtyear').val();
-
-		fechaC=new Date(fecha.getFullYear() +'/'+ mesC +'/'+ diaC);
-		fechaCA = fechaC;
+		var fecha_actual = new Date ();
+		//alert (fecha_actual);
+		var fecha_proximo = new Date (fecha_actual.getFullYear(),mesc -1 ,diac);
+		//alert (fecha_proximo);
+		var fecha_actual = new Date (fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate());
+		//alert (fecha_actual);
+		var fecha_nacimiento = new Date (anioc,mesc-1,diac);
+		//alert (fecha_nacimiento);
+		var edad=fecha_actual.getFullYear()-anioc;
 		
-
-	
-	if(fechaC > fechaA)
-	{
-       cuando=fechaC-fechaA;
-	   faltan=((((cuando/1000)/60)/60)/24);
-	  
-	}
-	else
-	{
-	fechaC=new Date((fecha.getFullYear()+1) +'/'+ mesC +'/'+ diaC);
-	  cuando=fechaC-fechaA;
-	   faltan=((((cuando/1000)/60)/60)/24);
-	   
-	}
-	$('#divnombre').text(nombre +' FALTAN');
-		$('#divdias').text(faltan);
-		if (faltan==1)
+		if (fecha_proximo <= fecha_actual)
 		{
-		$('#divcumple').text('DIA PARA SU CUMPLEAÑOS');
+			fecha_proximo = new Date (fecha_proximo.getFullYear()+1,fecha_proximo.getMonth(),fecha_proximo.getDate());
+			
 		}
 		else
 		{
-			$('#divcumple').text('DIAS PARA SU CUMPLEAÑOS');
+			edad=edad-1
 		}
-		if (faltan <=7)
+		var dias_faltantes = (fecha_proximo - fecha_actual)/1000/60/60/24;
+		
+		dias_faltantes = Math.round(dias_faltantes);
+		
+		
+		$('#divdias').text( $('#txtnombre').val() + ' FALTAN ' + dias_faltantes + ' DIAS PARA TU CUMPLEAÑOS '); 
+		
+		 $('#divedad').text('TIENES '+ edad  +  ' AÑOS HOY');
+		 
+		if (dias_faltantes <7)
 		{
-	     $('#divfelicidades').show();}
-	    else 
-	    {
-		  $('#divfelicidades').hide();}
-		  
-	  
-	  {}
-	 
-
-		edad=fecha.getFullYear()-yearC;
-		if (fechaCA > fechaA)
-		{
-			edad=edad-1;
-			$('#divedad').text('TIENES '+ edad  + ' AÑOS');
+				
+	       $('#divfelicidades').show();
 		}
 		else
 		{
-		$('#divedad').text('TIENES '+ edad  +  ' AÑOS HOY');
+			
+		    $('#divfelicidades').hide();
 		}
-			function redondeo(numero, decimales)
-{
-var flotante = parseFloat(numero);
-var resultado = Math.round(flotante*Math.pow(10,decimales))/Math.pow(10,decimales);
-return resultado;
-}
+		
+});
       
 	 
 	 $('#btninicio').click(function(e){
@@ -95,7 +73,7 @@ return resultado;
 		
 	});
 
-});// click sig fecha
+
 
 	});//ready
 
