@@ -1,6 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e) {
-//document.addEventListener("deviceready",function(){
+document.addEventListener("deviceready",function(){
 	$ ('#btncomenzar') .on ('tap' , function () { 
   navigator .vibrate (1000);
  });//  tap a btnvibrar
@@ -9,9 +9,7 @@ $(document).ready(function(e) {
  });//  tap a btnvibrar
 	
 }); 
-//});
 
-$(document).ready(function(e) {
 	
 	
 	$('#btnresultado').click(function(e){
